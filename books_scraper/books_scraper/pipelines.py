@@ -27,3 +27,4 @@ class BookCleaningPipeline:
         except (ValueError, TypeError):
             item['num_reviews'] = 0  # or None — your call, just be consistent
             spider.logger.warning(f"Bad num_reviews value: {item.get('num_reviews')!r} for {item.get('url')}")
+        return item
